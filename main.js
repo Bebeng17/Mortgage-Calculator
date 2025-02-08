@@ -1,7 +1,6 @@
 const defaultText = document.getElementById('default-text');
 const calculationsContainer = document.getElementById('calculations-container');
 
-// Hide results section initially
 calculationsContainer.style.display = 'none';
 
 document.querySelectorAll('.mortgage-type').forEach(input => {
@@ -52,7 +51,7 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
     let totalRepayment = 0;
 
     defaultText.style.display = 'none';
-    calculationsContainer.style.display = 'block'; // Show results only after valid input
+    calculationsContainer.style.display = 'block'; 
 
     if (mortgageType.value === 'repayment') {
       const monthlyRate = rate / 100 / 12;
@@ -74,6 +73,6 @@ document.getElementById('clear-btn').addEventListener('click', () => {
   document.getElementById('result').innerText = '';
   document.getElementById('term-result').innerText = '';
   defaultText.style.display = 'block';
-  calculationsContainer.style.display = 'none'; // Hide results when cleared
+  calculationsContainer.style.display = 'none'; 
 });
 

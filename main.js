@@ -74,5 +74,6 @@ document.getElementById('clear-btn').addEventListener('click', () => {
   document.getElementById('term-result').innerText = '';
   defaultText.style.display = 'block';
   calculationsContainer.style.display = 'none'; 
+  document.querySelectorAll('.radio-inputs').forEach(div => div.classList.remove('selected'));
 });
 

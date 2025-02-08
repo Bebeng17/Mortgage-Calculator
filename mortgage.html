@@ -50,3 +50,74 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+<div class="mortgage-calculator">
+  <div class="inputs__section">
+
+    <div class="mortgage__header">
+      <h2>Mortgage Calculator</h2>
+      <p>Clear All</p>
+    </div>
+
+    <div class="mortgage__amount">
+      <label for="amount">Mortgage Amount</label>
+      <input type="number" id="amount" name="amount" required>
+    </div>
+    <div class="term__rate">
+      <div class="mortgage__term">
+        <label for="term">Mortgage Term</label>
+        <input type="number" id="term" name="term" required>
+      </div>
+      <div class="mortgage__interestrate">
+        <label for="rate">Interest Rate</label>
+        <input type="number" id="rate" name="rate" required>
+      </div>
+    </div>
+    <div class="mortgage__type">
+      <p>Mortgage Type</p>
+      <div class="repayment__radio">
+        <input type="radio" name="repayment" id="repayment" checked>
+        <label for="repayment">Repayment</label>
+      </div>
+      <div class="interest__radio">
+        <input type="radio" name="interest" id="interest" checked>
+        <label for="interest">Interest Only</label>
+      </div>
+    </div>
+    <button>Calculate Repayments</button>
+  </div>
+
+
+    <!-- Empty results start -->
+  <div class="results__section">
+    <div class="empty__results">
+      <h3>Results shown here</h3>
+      <p>Complete the form and click “calculate repayments” to see what 
+        your monthly repayments would be.</p>
+    </div>
+    <!-- Empty results end -->
+
+    <!-- Completed results start -->
+    <div class="completed__results">
+      <h3>Your results</h3>
+      <p>Your results are shown below based on the information you provided. 
+        To adjust the results, edit the form and click “calculate repayments” again.
+      </p>
+      <div class="payment__figure">
+        <p>Your monthly repayments</p>
+        <p>Total you'll repay over the term</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Completed results end -->
+
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+  Coded by <a href="#">Your Name Here</a>.
+</div>
+

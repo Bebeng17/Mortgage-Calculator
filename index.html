@@ -2,84 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <title>Mortgage Repayment Calculator</title>
 </head>
 <body>
-  <div class="mortgage__mainfield">
-    <div class="inputs__section">
-
-      <div class="mortgage__header">
-        <h1>Mortgage Calculator</h1>
-        <p>Clear All</p>
-      </div>
-
-      <div class="mortgage__amount">
-        <label for="amount">Mortgage Amount</label>
-        <input type="number" id="amount" name="amount" required>
-      </div>
-      <div class="term__rate">
-        <div class="mortgage__term">
-          <label for="term">Mortgage Term</label>
-          <input type="number" id="term" name="term" required>
+ <div class="mortgage-calculator">
+  <div class="left">
+    <div class="header">
+      <h2>Mortgage Calculator</h2>
+      <button id="clear-btn">Clear All</button>
+    </div>
+    <form id="mortgage-form">
+      <div class="form-item">
+        <label for="mortgage-amount" class="light-text">Mortgage Amount</label>
+        <div class="form-flex" id="mortgage-amount-main">
+          <p class="form-symbol">$</p>
+          <input type="number" id="mortgage-amount" name="mortgage-amount" required>
         </div>
-        <div class="mortgage__interestrate">
-          <label for="rate">Interest Rate</label>
-          <input type="number" id="rate" name="rate" required>
+        <p class="form-alert" id="amount-alert">This field is required</p>
+      </div>
+
+      <div class="form-item">
+        <div class="form-col">
+          <div class="form-item">
+            <label for="mortgage-term" class="light-text">Mortgage Term</label>
+            <div class="form-flex" id="mortgage-term-main">
+              <input type="number" id="mortgage-term" name="mortgage-term" required>
+              <p class="form-symbol">years</p>
+            </div>
+            <p class="form-alert" id="term-alert">This field is required</p>
+          </div>
+          <div class="form-item">
+            <label for="interest-rate" class="light-text">Interest Rate</label>
+            <div class="form-flex" id="interest-rate-main">
+              <input type="number" id="interest-rate" name="interest-rate" step="0.01" required>
+              <p class="form-symbol">%</p>
+            </div>
+            <p class="form-alert" id="rate-alert">This field is required</p>
+          </div>
         </div>
       </div>
-      <div class="mortgage__type">
-        <p>Mortgage Type</p>
-        <div class="repayment__radio">
-          <input type="radio" name="repayment" id="repayment" checked>
+      <div class="form-item">
+        <label class="light-text">Mortgage Type</label>
+        <div class="radio-inputs">
+          <input type="radio" id="repayment" class="mortgage-type" name="mortgage-type" value="repayment" required>
           <label for="repayment">Repayment</label>
         </div>
-        <div class="interest__radio">
-          <input type="radio" name="interest" id="interest" checked>
-          <label for="interest">Interest Only</label>
+        <div class="radio-inputs">
+          <input type="radio" id="interest-only" class="mortgage-type" name="mortgage-type" value="interest-only" required>
+          <label for="interest-only">Interest Only</label>
+        </div>
+        <p class="form-alert" id="type-alert">This field is required</p>
+      </div>
+
+      <div class="form-item">
+        <button class="calculate-btn" id="calculate-btn" type="button">
+          Calculate Repayments
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="right">
+    <div class="default-text" id="default-text">
+      <h2>Results Shown Here</h2>
+      <p class="light-text">Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+    </div>
+
+    <div class="calculations-container" id="calculations-container">
+      <h2>Your Results</h2>
+      <p class="light-text">Your results are shown below based on the information you provided.</p>
+      <div class="calculations">
+        <div class="monthly">
+          <p class="light-text">Your Monthly Repayments</p>
+          <span id="result" class="monthly-result"></span>
+        </div>
+        <div class="line"></div>
+        <div class="total-term">
+          <p class="light-text">Total You'll Repay Over the Term</p>
+          <span id="term-result" class="term-result"></span>
         </div>
       </div>
-      <button>Calculate Repayments</button>
-    </div>
-
-
-      <!-- Empty results start -->
-    <div class="results__section">
-
-      Results shown here
-
-      Complete the form and click “calculate repayments” to see what 
-      your monthly repayments would be.
-
-      <!-- Empty results end -->
-
-      <!-- Completed results start -->
-
-      Your results
-
-      Your results are shown below based on the information you provided. 
-      To adjust the results, edit the form and click “calculate repayments” again.
-
-      Your monthly repayments
-
-      Total you'll repay over the term
     </div>
   </div>
+ </div>
 
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="main.js"></script>
 </body>
 </html>
